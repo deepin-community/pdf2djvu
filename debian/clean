@@ -1,0 +1,4 @@
+tests/*.djvu
+tests/*.log
+tests/*.stamp
+tests/*.pyc

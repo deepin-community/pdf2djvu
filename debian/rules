@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+export DH_VERBOSE=1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	! [ -f config.status ] || dh_auto_clean
+
+override_dh_auto_test:
+	echo "skip test, python2-based"
+#ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+#	mkdir -p debian/tmp/locales
+#	localedef -f ISO-8859-1 -i en_US ./debian/tmp/locales/en_US.ISO8859-1/
+#	# if build user is member of staff there are several tests failures due to a flaw in fontconfig, see #897251, #909728
+#	LOCPATH=$(CURDIR)/debian/tmp/locales $(MAKE) -j1 test
+#endif

@@ -1,0 +1,535 @@
+pdf2djvu (0.9.18.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    + Fix build failure with Poppler ≥ 21.10.
+    + Fix FTBFS with gcc-11. (Closes: #984288)
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Thu, 28 Oct 2021 18:15:17 +0800
+
+pdf2djvu (0.9.17.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    + Fix build failure with Poppler ≥ 20.08 (Closes: #969888).
+  * deb/control: add Rules-Requires-Root: no.
+  * deb/rules: remove --as-needed linker flag to fix lintian.
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Sat, 12 Sep 2020 11:45:15 +0800
+
+pdf2djvu (0.9.17-1) unstable; urgency=medium
+
+  * New upstream release.
+    + drop support for Poppler < 0.35.
+  * deb/control:
+    + update Poppler build-depends accordingly.
+    + upgrade compat 12.
+    + bump standards to 4.5.0.
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Wed, 04 Mar 2020 03:14:07 +0000
+
+pdf2djvu (0.9.15-1) unstable; urgency=medium
+
+  * New maintainer (Closes: #945185).
+  * New upstream release.
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Tue, 31 Dec 2019 08:02:26 +0000
+
+pdf2djvu (0.9.13-3) unstable; urgency=medium
+
+  * QA upload.
+  * Dont run tests, they are python2-based; Closes: #943158
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 21 Nov 2019 19:32:18 -0500
+
+pdf2djvu (0.9.13-2) unstable; urgency=medium
+
+  * Orphaning package.
+
+ -- Daniel Stender <stender@debian.org>  Wed, 20 Nov 2019 23:55:35 +0100
+
+pdf2djvu (0.9.13-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control:
+    + bump standards to 4.4.0 (no changes needed).
+
+ -- Daniel Stender <stender@debian.org>  Thu, 12 Sep 2019 12:11:27 +0200
+
+pdf2djvu (0.9.12-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control:
+    + bump standards to 4.3.0 (no changes needed).
+  * deb/copyright:
+    + expand copyright spans to 2019.
+
+ -- Daniel Stender <stender@debian.org>  Thu, 03 Jan 2019 11:56:53 +0100
+
+pdf2djvu (0.9.11-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control:
+    + drop dpkg-dev from b-deps (versioned dep not needed anymore).
+    + drop fontconfig from b-deps (no workaround anymore for #897251).
+    + bump standards to 4.2.1 (no further changes needed).
+  * deb/rules:
+    + build with DH_VERBOSE=1 (according to standards 4.2.0).
+    + drop unnecessary export line for DEB_BUILD_OPTIONS.
+    + add comment on test failures if builduser is member of "staff".
+  * deb/tests: Use AUTOPKGTEST_TMP instead of ADTTMP [Ondřej Nový].
+  * build with dh level 11 (changes in deb/compat and deb/control).
+
+ -- Daniel Stender <stender@debian.org>  Wed, 31 Oct 2018 16:53:43 +0100
+
+pdf2djvu (0.9.10-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control:
+    + bump djvulibre version among build- and runtime-deps.
+  * deb/changelog:
+    + remove trailing whitespace.
+
+ -- Daniel Stender <stender@debian.org>  Fri, 03 Aug 2018 12:13:53 +0200
+
+pdf2djvu (0.9.9-2) unstable; urgency=medium
+
+  * deb/docs:
+    + drop doc/cjk.txt (Closes: #903339).
+    + update remaining file names.
+
+ -- Daniel Stender <stender@debian.org>  Tue, 10 Jul 2018 08:53:05 +0200
+
+pdf2djvu (0.9.9-1) unstable; urgency=medium
+
+  * New upstream release.
+  * use fontconfig to prevent test failure (Closes: #897251):
+    + add fontconfig to build-deps in deb/control:
+    + pull fontconfig also into DEP-8 environment by deb/tests/control.
+  * deb/changelog:
+    + expand copyright span of upstream code.
+  * deb/rules:
+    + drop unnecessary parallel argument from dh sequencer call.
+
+ -- Daniel Stender <stender@debian.org>  Sat, 05 May 2018 12:28:50 +0200
+
+pdf2djvu (0.9.8-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #892109).
+  * deb/control:
+    + among b-deps, bump minimal poppler version to 0.24.
+    + fix Vcs-Git.
+
+ -- Daniel Stender <stender@debian.org>  Thu, 08 Mar 2018 18:12:47 +0100
+
+pdf2djvu (0.9.7-2) unstable; urgency=medium
+
+  * deb/changelog:
+    + removed a few trailing whitespaces.
+  * deb/control:
+    + bump standards to 4.1.3 (no changes needed).
+    + update Vcs- fields (project moved to Salsa).
+  * deb/copyright: expand copyright span.
+  * add debian/gbp.conf.
+
+ -- Daniel Stender <stender@debian.org>  Mon, 19 Feb 2018 18:45:13 +0100
+
+pdf2djvu (0.9.7-1) unstable; urgency=medium
+
+  * New upstream release.
+  * drop unnecessary autotools-dev (changes in deb/rules and deb/control).
+  * deb/control: bump standards version to 4.1.1 (no changes needed).
+
+ -- Daniel Stender <stender@debian.org>  Sun, 05 Nov 2017 00:38:43 +0100
+
+pdf2djvu (0.9.6-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Daniel Stender <stender@debian.org>  Fri, 25 Aug 2017 21:05:40 +0200
+
+pdf2djvu (0.9.5-1) unstable; urgency=medium
+
+  * New upstream release:
+    + update build-dep version of libpoppler-private-dev.
+  * use debhelper level 10 (changes in deb/compat and deb/control).
+  * deb/control:
+    + bump standards version to 4.0.0 (no further changes needed).
+    + remove deprecated Testsuite field.
+    + restore Vcs fields (the repo remained at collab-maint).
+  * deb/copyright:
+    + use https in Format field.
+    + update Source field (project moved to Github).
+    + expand copyright span.
+  * deb/watch:
+    + watch github.com/jwilk/pdf2djvu.
+    + bump version to 4.
+
+ -- Daniel Stender <stender@debian.org>  Tue, 18 Jul 2017 13:02:52 +0200
+
+pdf2djvu (0.9.4-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #812007).
+  * deb/control:
+    + updated maintainer email address.
+    + bumped standards to 3.9.7 (no changes needed).
+  * deb/copyright: updated, cosmetics.
+  * deb/rules: added DEB_BUILD_MAINT_OPTIONS with hardening=+all.
+
+ -- Daniel Stender <stender@debian.org>  Wed, 16 Mar 2016 21:46:59 +0100
+
+pdf2djvu (0.9.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control: dropped Vcs-Git and Browser (not collaboratively maintained,
+    Git log not needed anymore for review of changes in sponsoring).
+  * deb/tests:
+    + control: added locales to depends for test_iso8859_1.
+    + pdf2djvu: added generation of locale en_US.ISO(-)8859-1.
+  * Removed deb/gbp.conf (not needed to be maintained in Git).
+
+ -- Daniel Stender <debian@danielstender.com>  Tue, 01 Dec 2015 22:33:56 +0100
+
+pdf2djvu (0.9.2-3) unstable; urgency=medium
+
+  * deb/tests/pdf2djvu: copy also doc/ to ADTTMP (Closes: #803167)
+    [thanks to Dmitry Shachnev].
+
+ -- Daniel Stender <debian@danielstender.com>  Tue, 27 Oct 2015 17:07:45 +0100
+
+pdf2djvu (0.9.2-2) unstable; urgency=medium
+
+  * deb/control: added Build-Conflicts against locales-all (fix for #788352).
+
+ -- Daniel Stender <debian@danielstender.com>  Sun, 25 Oct 2015 22:10:39 +0100
+
+pdf2djvu (0.9.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/rules:
+    + added generation of locale en_US.ISO(-)8859-1 to override of
+      dh_auto_test (and added build-dep against locales to deb/control).
+    + use DEB_LDFLAGS_MAINT_APPEND instead of LD_FLAGS, dropped inclusion
+      of buildflags.mk (deprecated).
+
+ -- Daniel Stender <debian@danielstender.com>  Sun, 25 Oct 2015 13:18:33 +0100
+
+pdf2djvu (0.9.1-2) unstable; urgency=medium
+
+  * deb/control: dropped build-dep on libpstreams-dev (Closes: #801099).
+
+ -- Daniel Stender <debian@danielstender.com>  Tue, 06 Oct 2015 17:14:57 +0200
+
+pdf2djvu (0.9.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control: updated build-deps (XMP processing switched to Exiv2).
+
+ -- Daniel Stender <debian@danielstender.com>  Mon, 05 Oct 2015 23:54:55 +0200
+
+pdf2djvu (0.8.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bumped debhelper version to 9.
+
+ -- Daniel Stender <debian@danielstender.com>  Fri, 04 Sep 2015 16:21:27 +0200
+
+pdf2djvu (0.7.21-2) unstable; urgency=medium
+
+  * Dropped right click PDF context menu feature (Closes: #787247).
+
+ -- Daniel Stender <debian@danielstender.com>  Mon, 08 Jun 2015 14:30:05 +0200
+
+pdf2djvu (0.7.21-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #784889).
+
+ -- Daniel Stender <debian@danielstender.com>  Mon, 11 May 2015 13:23:09 +0200
+
+pdf2djvu (0.7.20-1) unstable; urgency=medium
+
+  * New upstream release.
+  * deb/control: added build-dep on python-pil.
+  * deb/tests: run nosetest directly, dropped allow-stderr, added dep
+    on python-pil.
+  * deb/gbp.conf: updated config section header for gbp 0.6.26.
+
+ -- Daniel Stender <debian@danielstender.com>  Tue, 05 May 2015 19:17:11 +0200
+
+pdf2djvu (0.7.19-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * deb/control: updated deprecated XS-Testsuite element.
+  * Added right click functionality (added deb/pdf2djvu.desktop,
+    deb/pdf2djvu.xpm, deb/pdf2djvu_wrapper, deb/install).
+
+ -- Daniel Stender <debian@danielstender.com>  Sun, 26 Apr 2015 15:49:32 +0200
+
+pdf2djvu (0.7.19-1) experimental; urgency=medium
+
+  * New upstream release.
+  * deb/copyright: updated.
+  * DEP-8 tests: added allow-stderr restriction to control file
+    (Closes: #776861).
+
+ -- Daniel Stender <debian@danielstender.com>  Fri, 13 Feb 2015 13:29:38 +0100
+
+pdf2djvu (0.7.18-1) experimental; urgency=medium
+
+  * New upstream release (Closes: #758262, #772616).
+  * deb/control:
+    + dropped Uploaders line (thanks, Luca!).
+    + bumped standards to 3.9.6 (no changes needed).
+    + updated Vcs-Browser.
+  * deb/copyright: updated Source URI, expanded copyright spans.
+  * deb/rules: dropped custom hardening options for Mips(el).
+  * deb/watch: updated (Closes: #773449).
+  * Added DEP-8 test suite.
+  * Fixed upstream-signing-key, and pgpsigurlmangle in deb/watch.
+  * wrap-and-sort -a -s.
+
+ -- Daniel Stender <debian@danielstender.com>  Wed, 07 Jan 2015 00:36:11 +0100
+
+pdf2djvu (0.7.17-4) unstable; urgency=low
+
+  * Bumped standards to 3.9.5 (no changes needed).
+  * deb/copyright:
+    + changed e-mail address of myself.
+    + expanded copyrights for deb/* to 2014.
+  * deb/rules: removed Vim status line.
+  * deb/watch: added pgpsigurlmangle (plus deb/upstream-signing-key.pgp).
+  * Removed deb/install (unneccesary).
+
+ -- Daniel Stender <debian@danielstender.com>  Thu, 03 Jul 2014 17:06:40 +0200
+
+pdf2djvu (0.7.17-3) unstable; urgency=low
+
+  [ Daniel Stender ]
+  * changed maintainer e-mail address.
+
+  [ Luca Bruno ]
+  * Fix auto clean target (Closes: #724228).
+
+ -- Daniel Stender <debian@danielstender.com>  Mon, 04 Nov 2013 17:21:36 +0100
+
+pdf2djvu (0.7.17-2) unstable; urgency=low
+
+  * deb/clean:
+    + added removal of tests/*.pyc (Closes: #712089).
+  * deb/control:
+    + bumped b-p on debhelper to 7.4.10 (which enabled --parallel).
+  * deb/rules:
+    + removed BINDNOW from extra hardening when build on mips or mipsel
+      (Closes: #712092).
+    + added check of DEB_BUILD_OPTIONS for auto_test override (Closes: #712090).
+
+ -- Daniel Stender <daniel@danielstender.com>  Fri, 14 Jun 2013 09:44:36 +0200
+
+pdf2djvu (0.7.17-1) unstable; urgency=low
+
+  [ Daniel Stender ]
+  * New upstream release.
+  * debian/control:
+    + bumped debhelper dep to 7.0.50.
+    + bumped standards to 3.9.4 (no changes needed).
+    + changed VCS fields.
+    + added b-p on autotools-dev (to prevent lintian complaint
+      on outdated-autotools-helper-file tools/config.guess 2012-02-10).
+  * debian/copyright:
+    + updated Format URI.
+    + extended copyrights to 2013.
+    + fixed typos.
+  * debian/rules:
+    + added DH_VERBOSE export line.
+    + replaced build targets with debhelper sequencer.
+    + added add-on autotools-dev to dh invocation.
+
+  [ Luca Bruno ]
+  * Enable parallel build, except for tests (Closes: #668774)
+
+ -- Daniel Stender <daniel@danielstender.com>  Sat, 08 Jun 2013 17:32:59 +0200
+
+pdf2djvu (0.7.16-1) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Luca Bruno <lucab@debian.org>  Mon, 06 May 2013 00:28:29 +0200
+
+pdf2djvu (0.7.16-0~exp1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Luca Bruno <lucab@debian.org>  Fri, 18 Jan 2013 14:27:52 +0100
+
+pdf2djvu (0.7.13-0~exp1) experimental; urgency=low
+
+  * New upstream release
+    + Fix German translation (Closes: #675573)
+    + Port to libpoppler25 API (Closes: #679891)
+    + Testsuite now build-depends on python-nose
+
+ -- Luca Bruno <lucab@debian.org>  Wed, 08 Aug 2012 22:38:12 +0200
+
+pdf2djvu (0.7.12-2) unstable; urgency=low
+
+  * Add missing pkg-config build-dep (Closes: #661080)
+  * Build with hardening flags enabled
+
+ -- Luca Bruno <lucab@debian.org>  Sat, 25 Feb 2012 14:01:05 +0100
+
+pdf2djvu (0.7.12-1) unstable; urgency=low
+
+  * New upstream release
+  * Update build-dep to libpoppler-private-dev for ongoing transition
+
+ -- Luca Bruno <lucab@debian.org>  Mon, 13 Feb 2012 22:00:03 +0100
+
+pdf2djvu (0.7.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Changes of debian/copyright:
+    + Minor changes to meet DEP-5, bumped rev. to 174.
+    + Changed source URL.
+    + Extended copyrights to 2011.
+    + Expanded the GPL-2 text.
+  * Changes of debian/control:
+    + Wrapped-and-sorted.
+    + Changed homepage URL.
+
+ -- Daniel Stender <daniel@danielstender.com>  Fri, 04 Nov 2011 19:58:07 +0100
+
+pdf2djvu (0.7.8-1) unstable; urgency=low
+
+  * New upstream release.
+    + Add German translation (Closes: #626315, #627950)
+    + Merge multiple input PDF files (Closes: #633628)
+  * Add recommended build targets build-arch and build-indep.
+  * Bump policy version.
+
+ -- Luca Bruno <lucab@debian.org>  Sun, 07 Aug 2011 18:00:14 +0200
+
+pdf2djvu (0.7.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Stender <daniel@danielstender.com>  Sun, 03 Apr 2011 16:44:21 +0200
+
+pdf2djvu (0.7.6-1) unstable; urgency=low
+
+  [ Daniel Stender ]
+  * New upstream release.
+
+  [ Luca Bruno ]
+  * Bumped build-dep on libdjvulibre-dev to avoid FTBFS (closes: #613477).
+
+ -- Luca Bruno <lucab@debian.org>  Sat, 12 Mar 2011 20:55:43 +0100
+
+pdf2djvu (0.7.4-2) unstable; urgency=low
+
+  * New maintainer (closes #598154).
+  * Bumped to standards-version 3.9.1.
+
+ -- Daniel Stender <daniel@danielstender.com>  Tue, 23 Nov 2010 14:30:57 +0100
+
+pdf2djvu (0.7.4-1) unstable; urgency=low
+
+  * New upstream relase (closes: #585582).
+
+ -- Jakub Wilk <jwilk@debian.org>  Sat, 12 Jun 2010 22:24:37 +0200
+
+pdf2djvu (0.7.3-1) unstable; urgency=low
+
+  * New upstream release (closes: #582425).
+  * Drop va_list mangling patch, no longer needed.
+  * Install a few documentation files.
+  * Update the watch file.
+
+ -- Jakub Wilk <jwilk@debian.org>  Mon, 24 May 2010 22:50:53 +0200
+
+pdf2djvu (0.7.2-1) unstable; urgency=low
+
+  * New upstream release:
+    + No longer produce broken DjVu files with --fg-colors=web
+      (closes: #579579).
+    + Properly initialize GraphicsMagick (closes: #579580).
+
+ -- Jakub Wilk <jwilk@debian.org>  Sun, 02 May 2010 01:08:23 +0200
+
+pdf2djvu (0.7.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Jakub Wilk <jwilk@debian.org>  Mon, 19 Apr 2010 21:45:45 +0200
+
+pdf2djvu (0.7.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update debian/copyright.
+  * Bump standards version to 3.8.4 (no changes needed).
+  * Bump priority to optional.
+
+ -- Jakub Wilk <jwilk@debian.org>  Sun, 28 Feb 2010 01:39:42 +0100
+
+pdf2djvu (0.6.1-2) unstable; urgency=low
+
+  * va_list mangling has been changed in GCC 4.4 on armel. Add a hack which
+    allows to build the package with GCC 4.4 even if poppler was compiled by
+    an older GCC.
+  * Sweep the tests directory in the clean target.
+  * Update my e-mail address.
+
+ -- Jakub Wilk <jwilk@debian.org>  Tue, 09 Feb 2010 12:21:22 +0100
+
+pdf2djvu (0.6.1-1) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * New upstream release.
+  * Remove superfluous debian/manpages file.
+  * Suggest poppler-data, which is necessary to properly convert some CJK
+    PDFs.
+
+  [ Luca Bruno ]
+  * debian/control: Added Luca Bruno as uploader
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Fri, 15 Jan 2010 00:25:03 +0100
+
+pdf2djvu (0.6.0-1) unstable; urgency=low
+
+  * New upstream release (closes: #552087).
+    + Update package description: XMP metadata is now properly supported.
+    + Add build-dependency on libxslt1-dev and libxml2-utils.
+  * New maintainer (closes: #563839).
+  * Switch from cdbs to dh.
+  * Ensure that poppler version is >= 0.7.3.
+  * Ensure that both djvulibre-bin and libdjvulibreNN versions are
+    >= 3.5.20-5.
+  * Use LDFLAGS=-Wl,--as-needed to avoid superfluous runtime dependencies.
+  * Switch to source format 3.0 (quilt).
+  * Update debian/copyright; use DEP-5 format.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Thu, 07 Jan 2010 22:08:58 +0100
+
+pdf2djvu (0.5.11-0.1) unstable; urgency=low
+
+  * Non-Maintainer Upload
+  * New Upstream version (Closes: #505690 #508391 #522339 #532002)
+  * Moved to git collab-maint, added proper gbp.conf and Vcs-Git tag
+  * Updated debian/rules for new building machinery, upstream changelog
+    moved to doc/changelog.txt
+  * Configure now needs djvulibre-bin, added to build-dep
+  * Updated S-V to 3.8.3
+  * Added ${misc:Depends} for cdbs
+  * Fixed copyright symbol
+
+ -- Luca Bruno <lucab@debian.org>  Mon, 31 Aug 2009 16:47:10 +0200
+
+pdf2djvu (0.4.11a-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/docs - added upstream Change Logs per request of upstream
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Sun, 29 Jun 2008 15:47:02 -0400
+
+pdf2djvu (0.4.10-1) unstable; urgency=low
+
+  * Initial release (Closes: #474142)
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Wed, 07 May 2008 17:42:58 -0400

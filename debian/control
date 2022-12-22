@@ -1,0 +1,41 @@
+Source: pdf2djvu
+Section: text
+Priority: optional
+Maintainer: Hsieh-Tseng Shen <woodrow.shen@gmail.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ djvulibre-bin (>= 3.5.25~),
+ libdjvulibre-dev (>= 3.5.25~),
+ libgraphicsmagick++1-dev,
+ libpoppler-private-dev (>= 0.35~),
+ libexiv2-dev,
+ uuid-dev,
+ pkg-config,
+# python-nose,
+# python-pil,
+ locales
+Build-Conflicts:
+ locales-all
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: http://jwilk.net/software/pdf2djvu
+Vcs-Browser: https://salsa.debian.org/debian/pdf2djvu
+Vcs-Git: https://salsa.debian.org/debian/pdf2djvu.git
+
+Package: pdf2djvu
+Architecture: any
+Depends:
+ djvulibre-bin (>= 3.5.25~),
+ ${misc:Depends},
+ ${shlibs:Depends}
+Suggests:
+ poppler-data
+Breaks:
+ libdjvulibre21 (<< 3.5.20-5~)
+Description: PDF to DjVu converter
+ pdf2djvu creates DjVu files from PDF files. It's able to extract:
+  - graphics,
+  - text layer,
+  - hyperlinks,
+  - document outline (bookmarks),
+  - metadata (including XMP metadata).
